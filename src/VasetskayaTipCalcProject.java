@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class VasetskayaTipCalcProject{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -11,8 +13,8 @@ public class VasetskayaTipCalcProject{
         double totalBillB4Tip = 0;
         double itemCost = 0;
         while (itemCost != -1) {
-            System.out.println("Please enter the cost of the first item in dollars and cents (ex. 3.99), or type -1 to end:");
-            itemCost = Integer.parseInt(scan.nextLine());
+            System.out.println("Please enter the cost of an item in dollars and cents (ex. 3.99), or type -1 to end:");
+            itemCost = Double.parseDouble(scan.nextLine());
             totalBillB4Tip += itemCost;
         }
 
@@ -26,6 +28,11 @@ public class VasetskayaTipCalcProject{
         System.out.println("Total bill before tip: $" + totalBillB4Tip);
         System.out.println("Tip Percentage: " + tipPercent + "%");
         System.out.println("Total Tip: $" + totalTip);
-        System.out.println("");
+        System.out.println("Total Bill with Tip: $" + totalBill);
+        System.out.println("Per Person Cost Before Tip: $" + perPersonCostB4Tip);
+        System.out.println("Tip Per Person : $" + tipPerPerson);
+        System.out.println("Total Cost Per Person: $" + totalCostPerPerson);
+
+        scan.close();
     }
 }
