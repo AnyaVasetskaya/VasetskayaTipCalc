@@ -1,8 +1,10 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class VasetskayaTipCalcProject{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        DecimalFormat formatter = new DecimalFormat("#.##");
         System.out.println("Greetings! With this program, you can calculate your tip amount.");
 
         System.out.println("Please enter the number of people at your table:");
@@ -25,13 +27,13 @@ public class VasetskayaTipCalcProject{
         double totalCostPerPerson = perPersonCostB4Tip + tipPerPerson;
 
         System.out.println("\n-------------------------\n");
-        System.out.println("Total bill before tip: $" + totalBillB4Tip);
+        System.out.println("Total bill before tip: $" + formatter.format(totalBillB4Tip));
         System.out.println("Tip Percentage: " + tipPercent + "%");
-        System.out.println("Total Tip: $" + totalTip);
-        System.out.println("Total Bill with Tip: $" + totalBill);
-        System.out.println("Per Person Cost Before Tip: $" + perPersonCostB4Tip);
-        System.out.println("Tip Per Person : $" + tipPerPerson);
-        System.out.println("Total Cost Per Person: $" + totalCostPerPerson);
+        System.out.println("Total Tip: $" + formatter.format(totalTip));
+        System.out.println("Total Bill with Tip: $" + formatter.format(totalBill));
+        System.out.println("Per Person Cost Before Tip: $" + formatter.format(perPersonCostB4Tip));
+        System.out.println("Tip Per Person : $" + formatter.format(tipPerPerson));
+        System.out.println("Total Cost Per Person: $" + formatter.format(totalCostPerPerson));
 
         scan.close();
     }
